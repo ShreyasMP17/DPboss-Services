@@ -1,0 +1,526 @@
+{
+    "lottery": [
+      {
+        "id": 1,
+        "name": "MILAN MORNING",
+        "leftNo": "840",
+        "midNo": "72",
+        "rightNo": "246",
+        "timeStart": "10:15 AM",
+        "timeEnd": "11:15 AM",
+        "weeklyResults": []
+          
+      },
+      {
+        "id": 2,
+        "name": "SRIDEVI",
+        "leftNo": "550",
+        "midNo": "11",
+        "rightNo": "678",
+        "timeStart": "11:35 AM",
+        "timeEnd": "12:35 PM",
+        "weeklyResults": [
+          
+        ]
+      },
+      {
+        "id": 3,
+        "name": "KALYAN MORNING",
+        "leftNo": "140",
+        "midNo": "56",
+        "rightNo": "150",
+        "timeStart": "11:00 AM",
+        "timeEnd": "12:02 PM",
+        "weeklyResults": [
+        ]
+      },
+      {
+        "id": 4,
+        "name": "LUCKY ",
+        "leftNo": "689",
+        "midNo": "31",
+        "rightNo": "579",
+        "timeStart": "02:00 AM",
+        "timeEnd": "04:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 5,
+        "name": "MADHURI",
+        "leftNo": "690",
+        "midNo": "50",
+        "rightNo": "479",
+        "timeStart": "11:45 AM",
+        "timeEnd": "12:45 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 6,
+        "name": "RAJDHANI MORNING [main]",
+        "leftNo": "128",
+        "midNo": "18",
+        "rightNo": "233",
+        "timeStart": "11:25 AM",
+        "timeEnd": "12:55 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 7,
+        "name": "SRIDEVI MORNING",
+        "leftNo": "170",
+        "midNo": "84",
+        "rightNo": "167",
+        "timeStart": "09:30 AM",
+        "timeEnd": "10:30 AM",
+        "weeklyResults": []
+      },
+      {
+        "id": 8,
+        "name": "MAHARANI",
+        "leftNo": "146",
+        "midNo": "13",
+        "rightNo": "247",
+        "timeStart": "12:15 PM",
+        "timeEnd": "02:15 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 9,
+        "name": "KARNATAKA DAY",
+        "leftNo": "350",
+        "midNo": "84",
+        "rightNo": "158",
+        "timeStart": "10:00 AM",
+        "timeEnd": "11:00 AM",
+        "weeklyResults": []
+      },
+      {
+        "id": 10,
+        "name": "LUCKY NIGHT",
+        "leftNo": "479",
+        "midNo": "06",
+        "rightNo": "141",
+        "timeStart": "07:00 PM",
+        "timeEnd": "09:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 11,
+        "name": "SRIDEVI NIGHT",
+        "leftNo": "368",
+        "midNo": "75",
+        "rightNo": "267",
+        "timeStart": "07:15 PM",
+        "timeEnd": "08:15 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 12,
+        "name": "DIAMOND NIGHT",
+        "leftNo": "312",
+        "midNo": "62",
+        "rightNo": "570",
+        "timeStart": "08:00 PM",
+        "timeEnd": "09:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 13,
+        "name": "MADHURI NIGHT",
+        "leftNo": "490",
+        "midNo": "33",
+        "rightNo": "445",
+        "timeStart": "06:45 PM",
+        "timeEnd": "07:45 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 14,
+        "name": "NIGHT TIME BAZAR",
+        "leftNo": "339",
+        "midNo": "58",
+        "rightNo": "116",
+        "timeStart": "08:35 PM",
+        "timeEnd": "10:35 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 15,
+        "name": "TARA MUMBAI NIGHT",
+        "leftNo": "134",
+        "midNo": "81",
+        "rightNo": "227",
+        "timeStart": "08:30 PM",
+        "timeEnd": "10:30 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 16,
+        "name": "MILAN NIGHT",
+        "leftNo": "123",
+        "midNo": "77",
+        "rightNo": "241",
+        "timeStart": "09:10 PM",
+        "timeEnd": "11:10 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 17,
+        "name": "MAIN KALYAN",
+        "leftNo": "299",
+        "midNo": "08",
+        "rightNo": "189",
+        "timeStart": "03:00 PM",
+        "timeEnd": "05:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 18,
+        "name": "MAIN BAZAR",
+        "leftNo": "250",
+        "midNo": "72",
+        "rightNo": "444",
+        "timeStart": "10:00 PM",
+        "timeEnd": "12:10 AM",
+        "weeklyResults": []
+      },
+      {
+        "id": 19,
+        "name": "MAHARANI DAY",
+        "leftNo": "470",
+        "midNo": "17",
+        "rightNo": "890",
+        "timeStart": "05:15 PM",
+        "timeEnd": "07:15 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 20,
+        "name": "SRIDEVI DAY",
+        "leftNo": "490",
+        "midNo": "34",
+        "rightNo": "257",
+        "timeStart": "01:30 PM",
+        "timeEnd": "02:30 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 21,
+        "name": "MUMBAI MORNING",
+        "leftNo": "129",
+        "midNo": "27",
+        "rightNo": "890",
+        "timeStart": "01:40 PM",
+        "timeEnd": "02:40 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 22,
+        "name": "KALYAN NIGHT",
+        "leftNo": "389",
+        "midNo": "06",
+        "rightNo": "330",
+        "timeStart": "09:30 PM",
+        "timeEnd": "11:30 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 23,
+        "name": "MAIN MATKA",
+        "leftNo": "258",
+        "midNo": "57",
+        "rightNo": "917",
+        "timeStart": "07:00 PM",
+        "timeEnd": "09:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 24,
+        "name": "NAMASTHE",
+        "leftNo": "450",
+        "midNo": "90",
+        "rightNo": "479",
+        "timeStart": "01:45 PM",
+        "timeEnd": "03:45 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 25,
+        "name": "NAMASTHE NIGHT",
+        "leftNo": "138",
+        "midNo": "22",
+        "rightNo": "345",
+        "timeStart": "07:00 PM",
+        "timeEnd": "09:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 26,
+        "name": "GUJRAT",
+        "leftNo": "447",
+        "midNo": "54",
+        "rightNo": "356",
+        "timeStart": "12:25 PM",
+        "timeEnd": "01:40 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 27,
+        "name": "CHENNAI BAZAR",
+        "leftNo": "279",
+        "midNo": "83",
+        "rightNo": "256",
+        "timeStart": "01:20 PM",
+        "timeEnd": "03:20 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 28,
+        "name": "OLD MAIN MUMBAI",
+        "leftNo": "580",
+        "midNo": "37",
+        "rightNo": "223",
+        "timeStart": "09:30 PM",
+        "timeEnd": "11:30 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 29,
+        "name": "MADHUR MORNING",
+        "leftNo": "246",
+        "midNo": "25",
+        "rightNo": "267",
+        "timeStart": "11:30 AM",
+        "timeEnd": "12:30 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 30,
+        "name": "MADHUR DAY",
+        "leftNo": "990",
+        "midNo": "89",
+        "rightNo": "135",
+        "timeStart": "01:30 PM",
+        "timeEnd": "02:30 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 31,
+        "name": "MADHUR NIGHT",
+        "leftNo": "255",
+        "midNo": "21",
+        "rightNo": "245",
+        "timeStart": "08:30 PM",
+        "timeEnd": "10:30 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 32,
+        "name": "RATAN KHATRI",
+        "leftNo": "380",
+        "midNo": "10",
+        "rightNo": "460",
+        "timeStart": "10:00 PM",
+        "timeEnd": "12:00 AM",
+        "weeklyResults": []
+      },
+      {
+        "id": 33,
+        "name": "MAHARANI NIGHT",
+        "leftNo": "570",
+        "midNo": "28",
+        "rightNo": "378",
+        "timeStart": "10:15 PM",
+        "timeEnd": "12:15 AM",
+        "weeklyResults": []
+      },
+      {
+        "id": 34,
+        "name": "PADMAVATHI NIGHT",
+        "leftNo": "789",
+        "midNo": "42",
+        "rightNo": "570",
+        "timeStart": "07:45 PM",
+        "timeEnd": "08:45 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 35,
+        "name": "JAY SHREE DAY",
+        "leftNo": "246",
+        "midNo": "29",
+        "rightNo": "388",
+        "timeStart": "11:05 AM",
+        "timeEnd": "12:05 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 36,
+        "name": "SRI DHANALAXMI",
+        "leftNo": "114",
+        "midNo": "60",
+        "rightNo": "280",
+        "timeStart": "12:00 PM",
+        "timeEnd": "01:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 37,
+        "name": "TIME BAZAR MORNING",
+        "leftNo": "138",
+        "midNo": "23",
+        "rightNo": "689",
+        "timeStart": "11:10 AM",
+        "timeEnd": "12:10 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 38,
+        "name": "TIME BAZAR",
+        "leftNo": "466",
+        "midNo": "64",
+        "rightNo": "590",
+        "timeStart": "01:10 PM",
+        "timeEnd": "02:10 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 39,
+        "name": "TARA MUMBAI DAY",
+        "leftNo": "237",
+        "midNo": "22",
+        "rightNo": "147",
+        "timeStart": "01:35 PM",
+        "timeEnd": "03:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 40,
+        "name": "PRABHAT",
+        "leftNo": "258",
+        "midNo": "59",
+        "rightNo": "469",
+        "timeStart": "01:30 PM",
+        "timeEnd": "03:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 41,
+        "name": "DIAMOND",
+        "leftNo": "367",
+        "midNo": "61",
+        "rightNo": "335",
+        "timeStart": "01:30 PM",
+        "timeEnd": "03:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 42,
+        "name": "TIME BAZAR DAY",
+        "leftNo": "480",
+        "midNo": "28",
+        "rightNo": "378",
+        "timeStart": "02:00 PM",
+        "timeEnd": "04:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 43,
+        "name": "BK BAZAR",
+        "leftNo": "222",
+        "midNo": "98",
+        "rightNo": "170",
+        "timeStart": "02:00 PM",
+        "timeEnd": "04:00 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 44,
+        "name": "MILAN DAY",
+        "leftNo": "77",
+        "midNo": "77",
+        "rightNo": "280",
+        "timeStart": "03:10 PM",
+        "timeEnd": "05:10 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 45,
+        "name": "MAIN BAZAR DAY",
+        "leftNo": "790",
+        "midNo": "69",
+        "rightNo": "135",
+        "timeStart": "03:35 PM",
+        "timeEnd": "05:35 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 46,
+        "name": "PUNA BAZAR",
+        "leftNo": "270",
+        "midNo": "91",
+        "rightNo": "236",
+        "timeStart": "01:15 PM",
+        "timeEnd": "03:15 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 47,
+        "name": "ADD GAME EMAIL US",
+        "leftNo": "dpbosservices@gmail.com",
+        "timeStart": "09:35 PM",
+        "timeEnd": "12:05 AM"
+      },
+      {
+        "id": 48,
+        "name": "BOMBAY NIGHT",
+        "leftNo": "120",
+        "midNo": "35",
+        "rightNo": "230",
+        "timeStart": "09:35 PM",
+        "timeEnd": "12:05 AM",
+        "weeklyResults": []
+      },
+      {
+        "id": 49,
+        "name": "SUNDAY BAZAR",
+        "leftNo": "279",
+        "midNo": "83",
+        "rightNo": "580",
+        "timeStart": "12:30 PM",
+        "timeEnd": "02:45 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 50,
+        "name": "SUNDAY BAZAR NIGHT",
+        "leftNo": "356",
+        "midNo": "46",
+        "rightNo": "178",
+        "timeStart": "08:30 PM",
+        "timeEnd": "10:30 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 51,
+        "name": "PAISA BAZAR DAY",
+        "leftNo": "236",
+        "midNo": "14",
+        "rightNo": "680",
+        "timeStart": "03:30 PM",
+        "timeEnd": "05:30 PM",
+        "weeklyResults": []
+      },
+      {
+        "id": 52,
+        "name": "NIGHT TIME BAZAR",
+        "leftNo": "339",
+        "midNo": "58",
+        "rightNo": "116",
+        "timeStart": "08:35 PM",
+        "timeEnd": "10:35 PM",
+        "weeklyResults": []
+      }
+      
+    ]
+}
