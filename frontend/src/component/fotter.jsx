@@ -4,7 +4,7 @@ const Footer =()=>{
         <div className="">
 <footer >
 
-<a class="ftr-icon" href="#">dpbossss.services</a>
+<a class="ftr-icon" href="#">dpbosservices.in</a>
 <p>
   All Rights Reseved®
   <br/>

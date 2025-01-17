@@ -30,7 +30,33 @@ const LotteryHome = () => {
   const today = new Date();
 
     const formattedDate = `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}`;
+
   
+    const fetchLiveData = async () => {
+      try {
+          const response = await axios.get('http://localhost:3000/live-data');
+          setLiveResults(response.data);
+          setLoading(false);
+      } catch (err) {
+          setError("Failed to fetch live data.");
+          setLoading(false);
+      }
+  };
+
+  useEffect(() => {
+      fetchLiveData();
+      const interval = setInterval(fetchLiveData, 30000); // Refresh every 30 seconds
+      return () => clearInterval(interval); // Cleanup on component unmount
+  }, []);
+
+  if (loading) {
+      return <div>Loading...</div>;
+  }
+
+  if (error) {
+      return <div>{error}</div>;
+  }
+
 
     return (
         <div className="main">
@@ -108,21 +134,32 @@ const LotteryHome = () => {
     <div className="liveResult">
         <h4>☔ LIVE RESULT ☔</h4>
         <div className="lv-mc">Sabse Tezz Live Result Yahi Milega</div>
-        {liveResults.map((lott) => (
-          <div className="live-re" key={lott._id}>
-            <span className="h8">{lott.name}</span>
-            <span className="h9">
-              {lott.status === "LOADING" ? "Loading..." : `${lott.leftNo}-${lott.midNo}`}
-            </span>
-            <button onClick={() => window.location.reload()}>Refresh</button>
-          </div>
-        ))}
+        
+                <div>
+                {liveResults.length === 0 ? (
+                <p>No live results available at the moment.</p>
+            ) : (
+              <div className="">
+                {liveResults.map((result, index) => (
+                             
+                                <div key={index} className="live-re">
+                                  <span className="h8">{result.name}</span>
+                                  <span className="h9">{result.result}</span>
+                                  <button onClick={() => window.location.reload()}>Refresh</button>
+                                </div>
+                          
+                        ))}
+                
+              </div>
+            )}
+                </div>
+           
       </div>
             <div class="text5" >
                 <span >☆ NOTICE ☆</span>
                 अपना बाजार dpbosservices@gmail.com वेबसाइट में डलवाने  <br />
                 के लिए आज ही हमें ईमेल करे  <br />
-                <a href="mailto:support@dpbossss.services">Email : support@dpboss.net</a>
+                <a href="mailto:dpbosservices@gmail.com">Email : dpbosservices@gmail.com</a>
                 <br />
                 शर्ते लागु
             </div>
@@ -180,7 +217,7 @@ const LotteryHome = () => {
 </div>
             <div class="support">
                 <p>Email for any inquiries Or Support:</p>
-                <a href="mailto:support@dpboss.net">dpbosservices@gmail.com</a>
+                <a href="mailto:dpbosservices@gmail.com">dpbosservices@gmail.com</a>
             </div>
             <div className='tricks'>
                 <h4 className="trick">  EverGreen Trick Zone And Matka Tricks By DpBoss </h4>
@@ -349,9 +386,9 @@ const LotteryHome = () => {
         </div>
         <div className="oc-3a-69">
             <p className="g5a1">↪ OLD MAIN MUMBAI</p>
-            <p className="l9w2v">7=9=4</p>
-              <p className="l9w2v">269=250=149=590=340=234</p>
-              <p className="l9w2v">71 =76  =41 =46 =91= 96</p>
+            <p className="l9w2v">7-9-4</p>
+              <p className="l9w2v">269-250-149-590-340-234</p>
+              <p className="l9w2v">71-76-41-46-91-96</p>
               <p className="l9w2v"></p>
         </div>
         <div className="oc-3a-69">
@@ -813,26 +850,3 @@ export default LotteryHome;
 
 
 
-{/* <div className='mainData'>
-                
-  <h4>MILAN MORNING</h4>
-  <span>579-12-345</span>
-  <p>10:15 AM &nbsp;&nbsp; 11:15 AM</p>
-      <a href="jodi-chart-record/milan-morning.php" className="jodi">Jodi</a>
-    <a href="panel-chart-record/milan-morning.php" className="panel">Panel</a>
-</div> */}
-              {/* {lotteryData.map(data => (
-                  <div className={`mainData ${[4, 10, 17, 23].includes(data.id) ? 'highlight' : ''}`} >
-                      <h4>{data.name}</h4>
-                      <span>{data.leftNo}-{data.midNo}-{data.leftNo}</span>
-                      <p>{data.timeStart}-{data.timeEnd}</p>
-                      
-                      <a href={`/jodi/${data.id}`} className="jodi">Jodi</a>
-                      <a href={`/lottery/${data.id}`} className="panel">Pannel</a>
-                  </div>
-
-              ))} */}
-
-
-              // key={data.id}
-              // className={`mainData ${[4, 10, 17, 23].includes(data.id) ? 'highlight' : ''}`}

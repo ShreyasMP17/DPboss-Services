@@ -86,11 +86,75 @@ const getLottery = async(req, res)=>{
         }
     }
 
+   
 
-    const getWeek = async (req, res) => {
-        const lottery = await Lottery.findById(req.params.id);
-        res.json({ data: lottery });
-      }
+const createWeekLottery = async(req,res)=>{
+    try {
+        const { id } = req.params; // WeeklyResult document ID
+        const { week, data } = req.body; // Day to update and new data to add
+        if (!week || !data) {
+            return res.status(400).json({ message: "Week and data are required" });
+        }
+        // Check if the day exists and update it with new data
+        const updatedResult = await Lottery.findByIdAndUpdate(
+            id,
+            { $push: { weeklyResults: { week, data } } },
+            { new: true, runValidators: true }
+        );
+
+        if (!updatedResult) {
+            return res.status(404).json({ message: "Weekly result not found" });
+        }
+
+        res.status(200).json({
+            message: "Nested data updated successfully",
+            data: updatedResult,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to update nested data",
+            error: error.message,
+        });
+    }
+};
+
+const editWeekLottery = async (req, res) => {
+    try {
+        const { id } = req.params; // WeeklyResult document ID
+        const { week, data } = req.body; // Week to identify and new data to update
+
+        if (!week || !data) {
+            return res.status(400).json({ message: "Week and data are required" });
+        }
+
+        // Update the specific week's data
+        const updatedResult = await Lottery.findOneAndUpdate(
+            { _id: id, "weeklyResults.week": week }, // Find document and specific week
+            { $set: { "weeklyResults.$.data": data } }, // Update the data for the matched week
+            { new: true, runValidators: true } // Return the updated document
+        );
+
+        if (!updatedResult) {
+            return res.status(404).json({ message: "Weekly result or week not found" });
+        }
+
+        res.status(200).json({
+            message: "Week data updated successfully",
+            data: updatedResult,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to update week data",
+            error: error.message,
+        });
+    }
+};
+
+
+    // const getWeek = async (req, res) => {
+    //     const lottery = await Lottery.findById(req.params.id);
+    //     res.json({ data: lottery });
+    //   }
       
       // const postWeek = async (req, res) => {
       //   const { id } = req.params;
@@ -101,91 +165,94 @@ const getLottery = async(req, res)=>{
       //   res.json({ record: { week, data } });
       // }
 
-      const postWeek = async (req, res) => {
-        const { id } = req.params; // Lottery ID
-        const { week, data } = req.body; // New weekly data
+    //   const postWeek = async (req, res) => {
+    //     const { id } = req.params; // Lottery ID
+    //     const { week, data } = req.body; // New weekly data
     
+    //     try {
+    //         const lottery = await Lottery.findById(id);
+    //         if (!lottery) {
+    //             return res.status(404).json({ message: "Lottery not found" });
+    //         }
+    
+    //         // Add the new week data
+    //         lottery.weeklyResults.push({ week, data });
+    //         await lottery.save();
+    
+    //         res.status(200).json({ message: "Week data added successfully", weeklyResults: lottery.weeklyResults });
+    //     } catch (error) {
+    //         res.status(500).json({ message: "Internal server error", error });
+    //     }
+    // };
+      
+    
+    //   const updateWeek = async (req, res) => {
+    //     const { id, recordId } = req.params;
+    //     const updatedData = req.body;
+    //     const lottery = await Lottery.findById(id);
+    //     const record = lottery.weeklyResults.id(recordId);
+    //     Object.assign(record, updatedData);
+    //     await lottery.save();
+    //     res.json({ updatedRecord: record });
+    //   }
+
+
+    const getLiveResults = async (req, res) => {
         try {
-            const lottery = await Lottery.findById(id);
-            if (!lottery) {
-                return res.status(404).json({ message: "Lottery not found" });
-            }
+            const currentTime = new Date();
     
-            // Add the new week data
-            lottery.weeklyResults.push({ week, data });
-            await lottery.save();
+            // Fetch all results from the database
+            const results = await Lottery.find();
     
-            res.status(200).json({ message: "Week data added successfully", weeklyResults: lottery.weeklyResults });
+            // Prepare the live results based on the time logic
+            const liveResults = results
+                .map((result) => {
+                    // Parse the timeStart field into a Date object
+                    const timeStart = new Date();
+                    const [time, period] = result.timeStart.split(" ");
+                    const [hours, minutes] = time.split(":");
+                    let parsedHours = parseInt(hours);
+    
+                    // Adjust hours based on AM/PM
+                    if (period === "PM" && parsedHours !== 12) {
+                        parsedHours += 12; // Convert PM hours to 24-hour format
+                    } else if (period === "AM" && parsedHours === 12) {
+                        parsedHours = 0; // Midnight case
+                    }
+    
+                    timeStart.setHours(parsedHours, parseInt(minutes), 0, 0);
+    
+                    // Calculate the 30 minutes before and after timeStart
+                    const timeStartWindow = new Date(timeStart.getTime() - 30 * 60 * 1000);
+                    const timeEndWindow = new Date(timeStart.getTime() + 30 * 60 * 1000);
+    
+                    // Check if current time is within the ±30 minutes window
+                    if (currentTime >= timeStartWindow && currentTime <= timeEndWindow) {
+                        const isSameResult =
+                            result.leftNo === req.query.prevLeftNo &&
+                            result.midNo === req.query.prevMidNo &&
+                            result.rightNo === req.query.prevRightNo;
+    
+                        return {
+                            name: result.name,
+                            result: isSameResult
+                                ? "Not Updated or Loading"
+                                : `${result.leftNo}-${result.midNo}-${result.rightNo}`,
+                        };
+                    } else {
+                        return null; // Exclude lotteries outside the time window
+                    }
+                })
+                .filter((item) => item !== null); // Remove null entries
+    
+            res.status(200).json(liveResults);
         } catch (error) {
-            res.status(500).json({ message: "Internal server error", error });
+            res.status(500).json({ error: error.message });
         }
     };
-      
-      const updateWeek = async (req, res) => {
-        const { id, recordId } = req.params;
-        const updatedData = req.body;
-        const lottery = await Lottery.findById(id);
-        const record = lottery.weeklyResults.id(recordId);
-        Object.assign(record, updatedData);
-        await lottery.save();
-        res.json({ updatedRecord: record });
-      }
-
-
-const getLiveLottery = async (req, res) => {
-    try {
-      const today = new Date();
-      const startOfDay = new Date(today.setHours(0, 0, 0, 0));
-      const endOfDay = new Date(today.setHours(23, 59, 59, 999));
-  
-      // Fetch today's results
-      const todayResults = await Lottery.find({
-        timeStart: { $gte: startOfDay.toISOString(), $lte: endOfDay.toISOString() },
-      });
-  
-      // Fetch yesterday's results
-      const yesterday = new Date(startOfDay);
-      yesterday.setDate(yesterday.getDate() - 1);
-      const yesterdayStart = new Date(yesterday.setHours(0, 0, 0, 0));
-      const yesterdayEnd = new Date(yesterday.setHours(23, 59, 59, 999));
-  
-      const yesterdayResults = await Lottery.find({
-        timeStart: { $gte: yesterdayStart.toISOString(), $lte: yesterdayEnd.toISOString() },
-      });
-  
-      // Map yesterday's data by `name` for comparison
-      const yesterdayMap = {};
-      yesterdayResults.forEach((entry) => {
-        yesterdayMap[entry.name] = entry.midNo; // Use `midNo` for comparison
-      });
-  
-      // Compare today's and yesterday's data to determine status
-      const liveResults = todayResults.map((row) => {
-        const yesterdayMidNo = yesterdayMap[row.name];
-        const isUpdated = yesterdayMidNo ? row.midNo !== yesterdayMidNo : true;
-  
-        return {
-          ...row._doc,
-          status: isUpdated ? "UPDATED" : "LOADING",
-        };
-      });
-  
-      res.status(200).send({
-        status: 200,
-        data: liveResults,
-        MessageChannel: "Live results fetched successfully",
-      });
-    } catch (err) {
-      res.status(500).send({
-        status: 500,
-        data: err,
-        MessageChannel: "Internal Server Error",
-      });
-    }
-  };
-
+    
 
 
   
 
-module.exports = { getLottery, createLottery,updateLottery,getLotteryById, deleteLottery, getLiveLottery,updateWeek, getWeek, postWeek }
+module.exports = { getLottery, createLottery,updateLottery,getLotteryById, deleteLottery, getLiveResults, createWeekLottery, editWeekLottery }

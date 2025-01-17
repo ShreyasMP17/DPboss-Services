@@ -4,15 +4,19 @@ import { AuthProvider } from "./component/AuthContext"; // Import AuthProvider
 import PrivateRoute from "./component/PrivateRoute"; // Import PrivateRoute
 import Logo from "./component/Logo";
 import LotteryHome from "./component/Lottery";
-import ADM from "./component/admLog"; // Login page
+import ADM from "./component/ad-login"; // Login page
 import AdminNavbar from "./component/adminNavbar";
 import Pannel from "./component/pannel";
 import Jodi from "./component/jodi";
 import Footer from "./component/fotter";
 import AdminLottery from "./component/admin-lottery";
-import AdminPannel from "./component/admin-weekly";
+import AdminPannel from "./component/ad-Pannel";
 import NotFoundPage from "./component/404"
-import Demon from "./component/demon";
+import WeekUpadte from "./component/ad-weekUpdate";
+import AdminNewLottery from "./component/admin-addnew";
+import AdminWeekLottery from "./component/admin-addweek";
+import AddLiveResult from "./component/ad-liveResults";
+import AdminHome from "./component/ad-home";
 
 
 function App() {
@@ -22,7 +26,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             {/* Public Routes */}
-            <Route path="/demon/:id" element={<Demon/>}/>
+            <Route path="/add-week/:id" element={<WeekUpadte/>}/>
             <Route path="/logo" element={<Logo />} />
             <Route path="/login" element={<ADM />} />
             <Route path="/" element={<LotteryHome />} />
@@ -30,16 +34,23 @@ function App() {
             <Route path="/jodi/:id" element={<Jodi />} />
             <Route path="/footer" element={<Footer />} />
             <Route path="*" element={<NotFoundPage />} />
-            <Route path="/admin-navbar" element={<PrivateRoute><AdminNavbar /></PrivateRoute>} />
+            {/* <Route path="/admin-navbar" element={<PrivateRoute><AdminNavbar /></PrivateRoute>} /> */}
+            <Route path="/admin-navbar" element={<AdminNavbar />} />
+            <Route path="/add-new" element={<AdminNewLottery />} />
+            <Route path="/add-weekly" element={<AdminWeekLottery/>} />
+            <Route path="/admin-pannel/:id" element={<AdminPannel/>} />
+            <Route path="/add-live-results" element={<AddLiveResult/>}/>
 
+            <Route path="/admin" element={<AdminHome/>}/>
             {/* Private/Admin Routes */}
             <Route
               path="/admin-lottery"
               element={
-                <PrivateRoute>
-                  <AdminLottery />
-                </PrivateRoute>
+                <AdminLottery />
               }
+              // <PrivateRoute>
+                //   <AdminLottery />
+                // </PrivateRoute>
             />
             <Route
               path="/admin-weekly/:id"

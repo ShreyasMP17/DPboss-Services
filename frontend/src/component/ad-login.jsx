@@ -22,7 +22,7 @@ const ADM = () => {
 
       if (response.status === 200) {
         login(); // Set user as authenticated
-        navigate("/admin-navbar"); // Redirect to admin navbar
+        navigate("/admin"); // Redirect to admin navbar
       }
     } catch (err) {
       setError(err.response?.data?.message || "Login failed. Please try again.");

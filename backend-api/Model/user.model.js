@@ -68,6 +68,10 @@ const Lottery = mongoose.Schema({
         type: String,
         required: true
     },
+    createdAt: { 
+        type: Date, 
+        default: Date.now // Automatically set the current date and time
+    },
     weeklyResults:[weeklyResultSchema]
 })
 

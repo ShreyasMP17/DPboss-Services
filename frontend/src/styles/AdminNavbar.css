@@ -8,10 +8,12 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #333; /* Dark background */
+    background-color: #11076f; /* Dark background */
     color: white;
     position: relative;
     z-index: 1000; /* Ensures navbar is always on top */
+    padding: 20px;
+    margin-bottom: 10px;
 }
 
 .logo img {

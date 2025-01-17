@@ -690,6 +690,14 @@ table[Attributes Style] {
   -webkit-border-horizontal-spacing: 0px;
   -webkit-border-vertical-spacing: 0px;
 }
+
+.live-re{
+  padding: 3px;
+    border-bottom: 1px solid #ff0018;
+
+}
+
+
 user agent stylesheet
 table {
   display: table;

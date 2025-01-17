@@ -67,3 +67,21 @@
     color: #ff00bb ;
     
 }
+
+.addpanel{
+  margin: 20px;
+}
+ .addpanel a{
+  padding: 6px 10px;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff00bb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+    text-decoration: none;
+    
+}

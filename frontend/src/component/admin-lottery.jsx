@@ -186,11 +186,18 @@ const AdminLottery = () => {
               <a href={`/jodi/${data.id}`} className="jodi">
                 Jodi
               </a>
+              
               <a href={`/lottery/${data.id}`} className="panel">
-                Panel
+                 Pannel
               </a>
+              
               {/* <button onClick={() => deleteLottery(data._id)}>Delete</button> */}
-              <button onClick={() => setUpdateLottery(data)}>Edit</button>
+              <button onClick={() => setUpdateLottery(data)}>Add Result</button>
+              <div className="addpanel">
+              <a href={`/demon/${data._id}`} className="">
+                Update Week
+              </a>
+              </div>
             </div>
           ))
         )}

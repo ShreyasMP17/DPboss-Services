@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/AdminNavbar.css";
-import LotteryHome from "../component/Lottery";
 
 const AdminNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,23 +18,23 @@ const AdminNavbar = () => {
             {/* Navigation Links */}
             <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
                 <li>
-                    <Link to="/" onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/admin" onClick={() => setIsMenuOpen(false)}>
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link to="/admin-lottery" onClick={() => setIsMenuOpen(false)}>
-                        Daily Results
+                    <Link to="/add-live-results" onClick={() => setIsMenuOpen(false)}>
+                        Add Live Results
                     </Link>
                 </li>
                 <li>
-                    <Link to="/admin-weekly/:id" onClick={() => setIsMenuOpen(false)}>
-                        Weekly Results
+                    <Link to="/add-weekly" onClick={() => setIsMenuOpen(false)}>
+                        Add Weekly Results
                     </Link>
                 </li>
                 <li>
-                    <Link to="/admin-lottery" onClick={() => setIsMenuOpen(false)}>
-                        Add New
+                    <Link to="/add-new" onClick={() => setIsMenuOpen(false)}>
+                        Add New Lottery
                     </Link>
                 </li>
                 <li>
@@ -55,9 +54,6 @@ const AdminNavbar = () => {
                 <span></span>
             </div>
         </nav>
-        <div className="">
-            {<LotteryHome/>}
-        </div>
        </div>
     );
 };
